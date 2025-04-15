@@ -76,8 +76,15 @@ WSGI_APPLICATION = 'metakorea.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dbmetacode10',
+        'USER': 'metacode10',
+        'PASSWORD': 'white9407!',
+        'HOST': '211.47.75.102',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 
