@@ -72,12 +72,13 @@
 <body>
   <div class="container">
     <h2>회원 등록</h2>
-    <form action="register_process.php" method="post">
+    <form action="createUserPost" method="post">
+      {% csrf_token %}
       <label for="email">이메일</label>
       <input type="email" id="email" name="email" required>
 
       <label for="username">이름</label>
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="name" name="name" required>
 
       <label for="password">비밀번호</label>
       <input type="password" id="password" name="password" required>

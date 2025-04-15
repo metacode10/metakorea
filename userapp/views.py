@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from userapp.models import ZUser
+
+
 # Create your views here.
 
 
@@ -9,15 +12,15 @@ def createUserGet(request):
 
 
 def createUserPost(request):
-#     newUser = User()
-# #    newUser.user_id = request.POST.get('user_id', None)
-#     newUser.username = request.POST.get('username', None)
-#     newUser.password = request.POST.get('password',    None)
-#     newUser.email = request.POST.get('email', None)
-#     newUser.created_at = request.POST.get('created_at', None)
-#     newUser.save()
+    user = ZUser()
+    user.id = request.POST.get('email', None)
+    user.name = request.POST.get('name', None)
+    user.password = request.POST.get('password', None)
+    user.inuse = True
+    user.email = request.POST.get('email', None)
+    user.save()
 
-    return render(request, "accountapp/result.html")
+    return render(request, "userapp/result.html")
 
 def readUserGet(request):
-    return render(request, "accountapp/list.html")
+    return render(request, "userapp/list.html")
